@@ -13,7 +13,7 @@ Person Transaction Manager is a web-based application that simplifies the proces
 - **Interactive**: Users can add names, set how much one person owes another, and the app will compute simplified final payments.
 
 ## How to Use
-1. Open the `mossad.html` file in your browser.
+1. Open the `main.html` file in your browser.
 2. Enter the number of persons involved in the transaction.
 3. Add the names and input how much each person owes another.
 4. Click on "Calculate Transactions" to see the simplified transactions.
