@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Manager</title>
+    <link rel="stylesheet" href="cash.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Cash Flow Minimizer</h1>
+
+        <div class="form-section">
+            <label for="persons">Number of Persons:</label>
+            <input type="number" id="persons" value="3" oninput="addInputs()">
+            <button onclick="addInputs()">Add Inputs</button>
+            <button onclick="updateOwesLabels()">Update Owes Labels</button>
+            <button onclick="calculateResult()">Calculate Transactions</button>
+        </div>
+
+        <div id="nameInputs"></div>
+        
+        <div id="paymentInputs"></div>
+
+        <h3>Simplified Transactions:</h3>
+        <div id="simplifiedTransactions"></div>
+        <pre id="output"></pre>
+
+        <canvas id="transactionCanvas" width="500" height="500"></canvas>
+    </div>
+
+    <!-- Script Section -->
+    <script src="cash.js"></script>
+</body>
+
+</html>
