@@ -1,0 +1,92 @@
+h1 {
+    font-family: 'Poppins', sans-serif;  
+    font-size: 48px;
+    font-weight: 600;
+    background: linear-gradient(to right, #00b4db, #0083b0); /* Gradient from blue to green */
+    -webkit-background-clip: text;
+    color: transparent; /* Makes the text take the gradient color */
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="text"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 10px;
+    border: none;
+    background-color: blue;;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#paymentInputs {
+    display: none;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+canvas {
+    border: 1px solid black;
+    margin: 20px 0;
+}
+
+h3 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#output {
+    white-space: pre-wrap;
+    text-align: left;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+}
+
+#simplifiedTransactions {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
