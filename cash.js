@@ -92,12 +92,39 @@ function updateOwesLabels() {
 function calculateResult() {
     const numPersons = parseInt(document.getElementById("persons").value);
     const netAmounts = new Array(numPersons).fill(0);
+    const transactionTable = document.getElementById("transactionTable");
+    const simplifiedTransactions = document.getElementById("simplifiedTransactions");
+    const matrixTable = document.getElementById("matrixTable");
     const names = [];
 
+    // Clear previous content to avoid duplication
+    transactionTable.innerHTML = '';
+    simplifiedTransactions.innerHTML = '';
+    matrixTable.innerHTML = '';
+
+    // Collect names
     for (let i = 1; i <= numPersons; i++) {
-        names.push(document.getElementById(`name${i}`).value.trim() || `Person ${i}`);
+        const name = document.getElementById(`name${i}`).value.trim() || `Person ${i}`;
+        names.push(name);
     }
 
+    // Create matrix
+    const matrix = Array.from({ length: numPersons }, () => Array(numPersons).fill(0));
+    for (let i = 1; i <= numPersons; i++) {
+        for (let j = 1; j <= numPersons; j++) {
+            if (i !== j) {
+                const amount = parseInt(document.getElementById(`p${i}p${j}`).value) || 0;
+                matrix[i - 1][j - 1] = amount;
+            }
+        }
+    }
+
+    // Update matrix table
+    matrixTable.innerHTML = `<table><thead><tr><th></th>${names.map(name => `<th>${name}</th>`).join('')}</tr></thead><tbody>` +
+        matrix.map((row, i) => `<tr><th>${names[i]}</th>${row.map(amount => `<td>${amount}</td>`).join('')}</tr>`).join('') +
+        `</tbody></table>`;
+
+    // Calculate net amounts
     for (let i = 1; i <= numPersons; i++) {
         for (let j = 1; j <= numPersons; j++) {
             if (i !== j) {
@@ -121,8 +148,6 @@ function calculateResult() {
 
     const transactions = [];
     let result = '';
-    const simplifiedTransactionsDiv = document.getElementById("simplifiedTransactions");
-    simplifiedTransactionsDiv.innerHTML = '';
 
     while (!debtorHeap.isEmpty() && !creditorHeap.isEmpty()) {
         const debtor = debtorHeap.extractMin();
@@ -150,7 +175,6 @@ function calculateResult() {
 
     document.getElementById("output").innerText = result;
     drawGraph(transactions, names);
-   // simplifiedTransactionsDiv.innerHTML = 'Transactions Summary:';
 }
 
 function drawGraph(transactions, names) {
