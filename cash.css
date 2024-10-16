@@ -40,7 +40,7 @@ button {
     padding: 8px 16px;
     margin: 10px;
     border: none;
-    background-color: blue;;
+    background-color: blue;
     color: white;
     border-radius: 4px;
     cursor: pointer;
@@ -89,4 +89,65 @@ h3 {
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* New CSS for Transaction and Creditor-Debtor Tables */
+#transactionTable, #creditorDebtorTable {
+    max-width: 600px;
+    margin: 20px 0;
+    border-collapse: collapse;
+    width: 90%;
+    text-align: center;
+}
+
+#transactionTable table, #creditorDebtorTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#transactionTable th, #creditorDebtorTable th, 
+#transactionTable td, #creditorDebtorTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#transactionTable th, #creditorDebtorTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#transactionTable td, #creditorDebtorTable td {
+    background-color: #fafafa;
+}
+
+#transactionTable tr:nth-child(even), #creditorDebtorTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* New CSS for Matrix Table */
+#matrixTable {
+    max-width: 400px;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+#matrixTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#matrixTable th, #matrixTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#matrixTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#matrixTable td {
+    background-color: #fafafa;
 }
